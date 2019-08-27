@@ -1,0 +1,283 @@
+    1  whoami
+    2  hostname
+    3  $ssh -X [manucho007]@osc-[N].edu.innopolis.ru
+    4  ssh -X [manucho007]@osc-[N].edu.innopolis.ru
+    5  gedit
+    6  sudo apt install gedit
+    7  gedit
+    8  gedit &
+    9  chrome
+   10  chroma
+   11  terminal
+   12  mkdir ~/week1
+   13  ls
+   14  mkdir week1
+   15  ls -a gcc
+   16  ls
+   17  cd week1
+   18  ls
+   19  cd..
+   20  cd
+   21  stdin
+   22  cls
+   23  clear
+   24  ls
+   25  cd week1
+   26  ls
+   27  gcc main.c -0 ex4
+   28  sudo apt install gcc
+   29  gcc main.c -0 ex4
+   30  nkjdfsnfkjds 1>err.txt
+   31  76 2>err.txt
+   32  err.txt
+   33  head -n 3 < file.txt
+   34  yes
+   35  yes > /dev/null
+   36  jobs
+   37  yes > /dev/null &
+   38  jobs
+   39  ls | sort -r | tail -n 3
+   40  gedit -help
+   41  gedit --help
+   42  main.c <hello.txt
+   43  touch hello.txt
+   44  main.c <hello.txt
+   45  main.c 1<hello.txt
+   46  file.txt 1<hello.txt
+   47  file.txt 1< hello.txt
+   48  cat hello2.txt
+   49  cat > hello2.txt
+   50  echo hello3.txt
+   51  echo > hello4.txt
+   52  ls >list.txt
+   53  cat list.txt
+   54  cat list.txt hello2.txt
+   55  cat list.txt > hello4.txt
+   56  cat hello4.txt
+   57  echo &
+   58  touch &
+   59  jobs
+   60  ls &
+   61  jobs
+   62  echo&
+   63  jobs
+   64  yes
+   65  es
+   66  yes
+   67  yes&
+   68  yes > /dev/null/
+   69  yes > /dev/null
+   70  jobs
+   71  yes > /dev/null &
+   72  jobs
+   73  yes > /dev/null 
+   74  yes > /dev/null &
+   75  jobs
+   76  yes > /dev/null 
+   77  yes > /dev/null &
+   78  jobs
+   79  kill 1
+   80  kill yes
+   81  apt-get install gcc
+   82  yes
+   83  sudp apt-get install gcc
+   84  sudo apt-get install gcc
+   85  gcc --version
+   86  sudo apt-get update
+   87  sudo apt-get install gcc
+   88  apt-get install gcc
+   89  cd..
+   90  cd
+   91  cd.
+   92  cd ..
+   93  apt-get install gcc
+   94  jobs
+   95  ls --help
+   96  gcc main.c
+   97  ls C
+   98  ls /mnt/c/windows
+   99  ls /mnt/c/Windows/System32 -r| grep Cloud >ex1.txt
+  100  history >ex2.txt
+  101  sleep 3
+  102  sleep --help
+  103  sleep 3s
+  104  cat ex3.sh
+  105  cat > ex3.sh
+  106  sh ex3.h
+  107  sh ex3.sh
+  108  date
+  109  sh ex3.sh
+  110  cat > ex4.sh
+  111  sh ex4.sh
+  112  gcc main.c -o ex5
+  113  sudo install apt install gcc
+  114  gcc main.c -o ex5
+  115  apt-get install gcc
+  116  sudo apt-get install gcc
+  117  gcc --version
+  118  gcc main.c -o ex5
+  119  ./ex5
+  120  gedit
+  121  sudo apt-get install gedit
+  122  gedit
+  123  yes
+  124  whoami
+  125  cd D:
+  126  cd D
+  127  git init
+  128  git add --all
+  129  git commit -p "First commit"
+  130  git config --global user.email "manrodri92@gmail.com"
+  131  git config --global user.name "Manuel Rodriguez"
+  132  git init
+  133  git commit -a -m "First Lab"
+  134  git add --all
+  135  git commit -m "First Week Lab"
+  136  git status
+  137  yes &
+  138  yes hello
+  139  cd..
+  140  cd .
+  141  cd.
+  142  cd ..
+  143  cd week1
+  144  cd ..
+  145  cd ~
+  146  cd d
+  147  cd mnt/d/week1
+  148  cd mnt
+  149  cd /mnt
+  150  cd /d/week1
+  151  cd /d
+  152  cd d
+  153  cd week1
+  154  yes hello&
+  155  yes&
+  156  mkdir lala
+  157  less
+  158  head
+  159  tail
+  160  head Modern_Operating_Systems
+  161  man -h Head
+  162  man -h | head
+  163  man -h | tail
+  164  man --help | tail
+  165  man item1
+  166  man Modern_Operating_Systems
+  167  man whoami
+  168  man cd
+  169  man man
+  170  man --help
+  171  man -7
+  172  man -7 12
+  173  man -7 1
+  174  man -7 1 1
+  175  man -a
+  176  1
+  177  man -a 1
+  178  man man  --ascii
+  179  yes&
+  180  yes > yes.txt
+  181  yes& > yes.txt
+  182  yes>yes.txt&
+  183  touch my_results
+  184  cat my_results
+  185  cat >my_results
+  186  cat my_results
+  187  cat >>my_results
+  188  cat my_results
+  189  grep
+  190  grep "Hello" data 1>>my_results
+  191  grep "Hello" 1>>my_results
+  192  cat my_results
+  193  grep 'Hello' 1>>my_results
+  194  cat my_results
+  195  ls /mnt/c/Windows/System32 -r| grep Cloud >ex1.txt
+  196  grep 'Hello' data 1>>my_results
+  197  cat my_results 
+  198  cd /mnt/c/Windows/System32 -r| grep Cloud >ex1.txt
+  199  ls /mnt/c/Windows/System32 -r| grep Cloud >ex1.txt
+  200  cat my_results 
+  201  cat ex1
+  202  cat ex1.txt 
+  203  ls /mnt/d/
+  204  ls /mnt/d/Innopolis/Teaching/Operating systems/Las
+  205  ls /mnt/d/Innopolis/Teaching/Operating systems/Labs
+  206  ls /mnt/d/Innopolis/Teaching/
+  207  cd Operating Systems
+  208  cd Operating_Systems
+  209  cd Operating-Systems
+  210  ls /mnt/d/Innopolis/Teaching/Operating\Systems/Labs
+  211  ls /mnt/d/Innopolis/Teaching/Operating \Systems/Labs
+  212  ls /mnt/d/Innopolis/Teaching/Operating\ Systems/Labs
+  213  head -n 3<file.txt
+  214  whoami
+  215  ls /mnt/c/Windows/SYstem32 -r| grep cloud >ex1
+  216  git init
+  217  git add --all
+  218  Windows.CloudStore.dll
+  219  Windows.CloudStore.Schema.Shell.dll
+  220  Windows.CloudStore.Schema.DesktopShell.dll
+  221  WiFiCloudStore.dll
+  222  MicrosoftAccountCloudAP.dll
+  223  CloudStorageWizard.exe
+  224  CloudNotifications.exe
+  225  CloudExperienceHostUser.dll
+  226  CloudExperienceHostCommon.dll
+  227  CloudExperienceHostBroker.exe
+  228  cls
+  229  clear
+  230  git commit -m "First Lab"
+  231  git remote add origin https://github.com/manucho007/OSLabs.git
+  232  git push -u origin master
+  233  whoami
+  234  history >ex2
+  235  ls /mnt/c/Windows/System32 -r| grep Cloud >ex1.txt
+  236  cd..
+  237  cd.
+  238  mkdir week1
+  239  cd week1
+  240  ls /mnt/d/Innopolis/Teaching/Operating\ Systems/Classes/wwek1
+  241  ls /mnt/d/Innopolis/Teaching/Operating\ Systems/Classes/week1
+  242  ls /mnt/d/Innopolis/Teaching/Operating\ Systems/Classes/week1 -r| grep cloud >ex1
+  243  ls /mnt/d/Innopolis/Teaching/Operating\ Systems/Classes/week1 -r| grep "cloud" >ex1
+  244  ls /mnt/c/Windows/System32 -r| grep Cloud >ex1.txt
+  245  ls /mnt/c/Windows/System32 -r| grep Cloud >ex1.txt
+  246  history >ex2
+  247  git init
+  248  git add -all
+  249  git add --all
+  250  ls /mnt/c/Windows/System32 -r | grep Cloud >ex1
+  251  history>ex2
+  252  t init
+  253  git init
+  254  git add --all
+  255  git -m "First Lab"
+  256  git commit -m "First Lab"
+  257  git remote add origin https://github.com/manucho007/os_labs.git
+  258  git push -u origin master
+  259  ls /mnt/c/Windows/System32 -r| grep Cloud >ex1.txt
+  260  history >ex2
+  261  gcc main.c -o ex4
+  262  ./ex4
+  263  git init
+  264  git add --all
+  265  git commit -m "First"
+  266  git init
+  267  mkdir week1
+  268  cd week1
+  269  ls /mnt/c/Windows/System32 -r |grep Cloud>ex1.txt
+  270  whoami
+  271  cd .
+  272  cd.
+  273  clear
+  274  cd..
+  275  clear
+  276  cd ..
+  277  ls /mnt/c/Windows/System32 -r |grep Cloud>ex1.txt
+  278  history >ex2.txt
+  279  cat > ex3.sh
+  280  cd week1
+  281  clear
+  282  ls /mnt/c/Windows/System32 -r |grep Cloud>ex1.txt
+  283  history >ex2.txt

@@ -1,0 +1,14 @@
+Windows.CloudStore.dll
+Windows.CloudStore.Schema.Shell.dll
+Windows.CloudStore.Schema.DesktopShell.dll
+WiFiCloudStore.dll
+MicrosoftAccountCloudAP.dll
+CloudStorageWizard.exe
+CloudNotifications.exe
+CloudExperienceHostUser.dll
+CloudExperienceHostCommon.dll
+CloudExperienceHostBroker.exe
+CloudExperienceHostBroker.dll
+CloudExperienceHost.dll
+CloudDomainJoinDataModelServer.dll
+CloudDomainJoinAUG.dll
