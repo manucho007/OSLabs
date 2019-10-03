@@ -1,0 +1,1 @@
+size -A sample > ex1.txt
