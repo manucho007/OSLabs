@@ -1,0 +1,13 @@
+<----------------------32 bits(word)---------------------->
+<-----19 bits(index)----- ><-----13 bits(page offset)----->
+
+“32-bit address space and an 8-KB page” means that there is 13 bits(8-KB) 
+for page offset and the rest of 19 bits is for indexing page table entry.
+
+herefore, there are 2^19 entries in page table.
+
+Each entry needs 100 ns to be copied from disk to memory.
+
+Total time for copy one page table needs 2^19 * 100 ns = 52.42 ms.
+
+The total time spending on one process is 100 ms, so the fraction of the CPU time which devoted to loading the page table is (52.42)/(100) = 52.42 %

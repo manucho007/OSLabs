@@ -1,0 +1,1 @@
+./ex2 & vmstat 1 && fg
