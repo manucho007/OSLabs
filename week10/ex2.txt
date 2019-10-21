@@ -1,0 +1,8 @@
+cd week1
+echo 'Hello, world.' >file.txt
+cd..
+cd week10
+link ../week1/file.txt _ex2.txt
+ls -i _ex2.txt
+find  ../week1/file.txt -inum 281474976711102
+find  ../week1/file.txt -inum 281474976711102 -exec rm {} \;
