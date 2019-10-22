@@ -1,0 +1,5 @@
+1)If the sequence will contain a very small number of repeating pages, 
+hit/miss ratio will decrease since the algorithm will have a harder time finding needed pages in frames.
+
+)If we make the number of distinct pages equal to the number of page frames,
+ hit/miss ratio will be high, since miss will occur only when not all frames are filled.

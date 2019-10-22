@@ -1,147 +1,84 @@
-//Write a program that simulates a paging system using the aging algorithm. The number of page
-//frames is a parameter. The sequence of page references should be read from a file.
-//For a given input file, plot the number of page faults per 1000 memory references as a function of
-//the number of page frames available.
-
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
-
-//THE PAGE FREQUENCY PER 1000 MEMORY REFERENCE DATA IS STORED IN A SEPARATE FILE CALLED DATA.TXT.
-//DATA POINTS CAN BE USED TO PLOT THE GRAPH
-
-void AgeIncrease(int frames);
-int OldestIndex(int frames);
-
-struct PageTable
+#define DEFAULT 10
+#define NUMBER_BITS 16
+/*
+	10 hit = 9.000000 miss = 991.000000 ratio = 0.009082
+	50 hit = 51.000000 miss = 949.000000 ratio = 0.053741
+	100 hit = 94.000000 miss = 906.000000 ratio = 0.103753
+*/
+typedef struct page
 {
-    int frame_number;
-    bool valid;
-} * PageTable;
+	int id;
+	unsigned counter : NUMBER_BITS;
+} page;
 
-struct FrameTable
+FILE *file;
+
+int main(int argc, char const *argv[])
 {
-    int page_number;
-    int age;
-} * FrameTable;
+	float hit = 0, miss = 0;
+	int num_of_pages = DEFAULT;
+	printf("Print the number of pages\n");
+	scanf("%d", &num_of_pages);
 
-int main(void)
-{
-    printf("Number of pages:\n");
-    int pages;
-    scanf("%d", &pages);
+	file = fopen("input.txt", "r");
 
-    printf("Number of frames:\n");
-    int frames;
-    scanf("%d", &frames);
+	page *pages = calloc(num_of_pages, sizeof(page));
 
-    PageTable = malloc(sizeof(PageTable) * pages);
-    FrameTable = malloc(sizeof(FrameTable) * frames);
+	int cur_page;
 
-    int i;
-    for (i = 0; i < pages; i++)
-    {
-        PageTable[i].valid = false;
-    }
+	for (int i = 0; i < num_of_pages; i++)
+	{
+		pages[i].counter = 0;
+		pages[i].id = -1;
+	}
 
-    for (i = 0; i < frames; i++)
-    {
-        FrameTable[i].age = 0;
-    }
+	while (fscanf(file, "%d", &cur_page) != EOF)
+	{
+		for (int i = 0; i < num_of_pages; i++)
+		{
+			printf("i = %d id = %d", i, pages[i].id);
+			char buffer[64];
+			snprintf(buffer, sizeof(buffer), "%d", pages[i].counter);
+			printf(" %s\n", buffer);
+		}
+		int candidate = -1;
+		int least = pages[0].counter;
+		for (int i = 0; i < num_of_pages; i++)
+		{
+			pages[i].counter >>= 1;
+			if (pages[i].id == -1 && candidate == -1)
+			{
+				candidate = i;
+			}
+			if (pages[i].id == cur_page)
+			{
+				candidate = i;
+			}
+			if (least > pages[i].counter && candidate == -1)
+			{
+				least = pages[i].counter;
+			}
+		}
 
-    FILE *fp = fopen("input.txt", "r");
+		if (pages[candidate].id == cur_page)
+		{
+			pages[candidate].counter |= 1 << (NUMBER_BITS - 1);
+			hit++;
+		}
+		else
+		{
+			miss++;
+			pages[candidate].counter = 0;
+			pages[candidate].id = cur_page;
+			pages[candidate].counter |= 1 << (NUMBER_BITS - 1);
+		}
+		candidate = -1;
+		printf("\n");
+	}
 
-    int request;
-    int frame_table_counter = 0;
-    int page_fault_counter = 0;
-    int request_counter = 0;
-    int memory_ref_counter = 0;
-    //add frame size to page faults later
-    while (!feof(fp))
-    {
-        fscanf(fp, "%d", &request);
-        request_counter++;
-        if (PageTable[request].valid == false)
-        {
-            FrameTable[frame_table_counter].page_number = request;
-            PageTable[request].valid = true;
-            PageTable[request].frame_number = frame_table_counter;
-            frame_table_counter++;
-            page_fault_counter++;
-            memory_ref_counter++;
-        }
+	printf("hit = %f miss = %f ratio = %f\n", hit, miss, hit / miss);
 
-        if (request_counter == 1000)
-        {
-            FILE *fp = fopen("data.txt", "a");
-            fprintf(fp, "%d\n", memory_ref_counter);
-            memory_ref_counter = 0;
-            request_counter = 0;
-            fclose(fp);
-        }
-        if (frame_table_counter == frames)
-        {
-            break;
-        }
-    }
-
-    while (!feof(fp))
-    {
-        fscanf(fp, "%d", &request);
-        request_counter++;
-        AgeIncrease(frames);
-        if (PageTable[request].valid == false)
-        {
-            int oldest_page = OldestIndex(frames);
-            PageTable[FrameTable[oldest_page].page_number].valid = false;
-            FrameTable[oldest_page].page_number = request;
-            FrameTable[oldest_page].age = 0;
-            PageTable[request].frame_number = oldest_page;
-            PageTable[request].valid = true;
-            page_fault_counter++;
-            memory_ref_counter++;
-        }
-
-        if (request_counter == 1000)
-        {
-            FILE *fp = fopen("data.txt", "a");
-            fprintf(fp, "%d\n", memory_ref_counter);
-            memory_ref_counter = 0;
-            request_counter = 0;
-            fclose(fp);
-        }
-    }
-
-    printf("Total page faults %d\n", page_fault_counter);
-
-    fclose(fp);
-    free(PageTable);
-    free(FrameTable);
-
-    return 0;
-}
-
-void AgeIncrease(int frames)
-{
-    int i;
-    for (i = 0; i < frames; i++)
-    {
-        FrameTable[i].age++;
-    }
-}
-
-int OldestIndex(int frames)
-{
-    int oldest = -1;
-    int i;
-    int index;
-    for (i = 0; i < frames; i++)
-    {
-        if (oldest < FrameTable[i].age)
-        {
-            oldest = FrameTable[i].age;
-            index = i;
-        }
-    }
-    return index;
+	return 0;
 }
