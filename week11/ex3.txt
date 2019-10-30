@@ -1,0 +1,4 @@
+In the first example, since printf prints buffered result to the console only after '\n', both processes print Hello,
+because they both contain not printed 'Hello' in their buffer.
+
+In the second example only parent process prints 'Hello'. Then each of two processes prints empty line.
