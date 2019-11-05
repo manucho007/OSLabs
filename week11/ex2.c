@@ -6,8 +6,6 @@
 
 int main(void)
 {
-    FILE *file;
-    file = freopen("ex2.txt", "w", stdout);
     printf("H");
     sleep(1);
     printf("e");
@@ -18,8 +16,5 @@ int main(void)
     sleep(1);
     printf("o");
     sleep(1);
-
-    fclose(file);
-
     return 0;
 }
